@@ -49,7 +49,3 @@ class Main {
         var collegeSchoolMajor = "COLLEGE SCHOOL MAJOR"
 
     }
-
-
-
-}
