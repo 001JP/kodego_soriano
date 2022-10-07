@@ -4,48 +4,48 @@ fun main() {
 
         //    Application for Employment
 
-        var position = "Junior App Developer"
-        var desiredSalary = 100000000
-        var dateAvailForWork = "02/01/2023"
+        var position: String? = null
+        var desiredSalary: Int? = null
+        var dateAvailForWork: String? = null
 
         //    Personal Information
 
-        val lastName = "SORIANO"
-        val firstName = "JP"
-        val middle = "MIDDLE NAME"
-        val birthDate = "01/11/2004"
+        val lastName: String? = null
+        val firstName: String? = null
+        val middle: String? = null
+        val birthDate: String? = null
 
-        var address = "35"
-        var city = "SAN FERNANDO"
-        var state = "LA UNION"
-        var zip = "2500"
+        var address: String? = null
+        var city: String? = null
+        var state: String? = null
+        var zip: String? = null
 
-        var phone = "09061234567"
-        var email = "noobs@001.com"
-        var sss: Int = 1234567890
-        var usCitizen: Boolean = false
-        var felony: Boolean = true
-        var drugTest: Boolean = true
+        var phone: String? = null
+        var email: String? = null
+        var sss: Int? = null
+        var usCitizen: Boolean? = null
+        var felony: Boolean? = null
+        var drugTest: Boolean? = null
 
 
         //Education
 
-        var primarySchool = "PRIMARY SCHOOL"
-        var primarySchoolLocation = "PRIMARY SCHOOL LOCATION"
-        var primarySchoolYears = "PRIMARY SCHOOL YEARS"
-        var primarySchoolDegree = "PRIMARY SCHOOL DEGREE"
-        var primarySchoolMajor = "PRIMARY SCHOOL MAJOR"
+        var primarySchool: String? = null
+        var primarySchoolLocation: String? = null
+        var primarySchoolYears: String? = null
+        var primarySchoolDegree: String? = null
+        var primarySchoolMajor: String? = null
 
-        var secondarySchool = "SECONDARY SCHOOL"
-        var secondarySchoolLocation = "SECONDARY SCHOOL LOCATION"
-        var secondarySchoolYears = "SECONDARY SCHOOL YEARS"
-        var secondarySchoolDegree = "SECONDARY SCHOOL DEGREE"
-        var secondarySchoolMajor = "SECONDARY SCHOOL DEGREE"
+        var secondarySchool: String? = null
+        var secondarySchoolLocation : String? = null
+        var secondarySchoolYears: String? = null
+        var secondarySchoolDegree: String? = null
+        var secondarySchoolMajor: String? = null
 
-        var collegeSchool = "COLLEGE SCHOOL"
-        var collegeSchoolLocation = "COLLEGE SCHOOL LOCATION"
-        var collegeSchoolYears = "COLLEGE SCHOOL YEARS"
-        var collegeSchoolDegree = "COLLEGE SCHOOL DEGREE"
-        var collegeSchoolMajor = "COLLEGE SCHOOL MAJOR"
+        var collegeSchool: String? = null
+        var collegeSchoolLocation: String? = null
+        var collegeSchoolYears: String? = null
+        var collegeSchoolDegree: String? = null
+        var collegeSchoolMajor: String? = null
 
     }
