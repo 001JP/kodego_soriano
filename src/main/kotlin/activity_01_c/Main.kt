@@ -12,8 +12,8 @@ You are also tasked to group the items in categories to help manage the grocery.
 
 fun main() {
 
-    /*
-    //    Items that can be bought in a grocery store
+
+//    Items that can be bought in a grocery store
 
     var item1: String = "juice"
     var item2: String = "breads"
@@ -28,7 +28,7 @@ fun main() {
     var item11: String = "soap"
     var item12: String = "batteries"
 
-    */
+
 
 
 //    Item categories
