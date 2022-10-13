@@ -27,8 +27,11 @@ fun main() {
     var item10: String = "dishwashing liquid"
     var item11: String = "soap"
     var item12: String = "batteries"
-    Item categories
+
     */
+
+
+//    Item categories
 
     var beverage: Boolean? = null
     var bread: Boolean? = null
