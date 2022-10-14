@@ -15,18 +15,18 @@ fun main() {
 
 //    Items that can be bought in a grocery store
 
-    var item1: String = "juice"
-    var item2: String = "breads"
-    var item3: String = "canned sardines"
-    var item4: String = "eggs"
-    var item5: String = "sugar"
-    var item6: String = "ice cream"
-    var item7: String = "pork"
-    var item8: String = "vegetables"
-    var item9: String = "dishwashing liquid"
-    var item10: String = "dishwashing liquid"
-    var item11: String = "soap"
-    var item12: String = "batteries"
+    var juice: String
+    var breads: String
+    var cannedSardines: String
+    var eggs: String
+    var sugar: String
+    var iceCream: String
+    var pork: String
+    var vegetables: String
+    var dishwashingLiquid: String
+    var toiletPaper: String
+    var soap: String
+    var batteries: String
 
 
 
