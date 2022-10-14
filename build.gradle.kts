@@ -12,6 +12,9 @@ repositories {
 }
 
 dependencies {
+    implementation("io.github.microutils:kotlin-logging-jvm:2.0.11")
+    implementation("ch.qos.logback:logback-classic:1.4.4")
+
     testImplementation(kotlin("test"))
 }
 
