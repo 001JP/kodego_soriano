@@ -35,7 +35,7 @@ fun main() {
 
     if (finished) {
 
-        println("Divide the value by how many? ")
+        println("Divide $amountTotal by how many? ")
         var dividedBy = readLine()?.toIntOrNull()
 
         if (dividedBy != null) {
