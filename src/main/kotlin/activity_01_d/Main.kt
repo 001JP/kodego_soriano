@@ -22,7 +22,7 @@ fun main() {
 
     for (i in 1..5) {
         println("ENTER THE AMOUNT $i: ")
-        var amount = readLine()?.toIntOrNull()
+        val amount = readLine()?.toIntOrNull()
 
         if (amount != null) {
             amountTotal += amount
@@ -36,7 +36,7 @@ fun main() {
     if (finished) {
 
         println("Divide $amountTotal by how many? ")
-        var dividedBy = readLine()?.toIntOrNull()
+        val dividedBy = readLine()?.toIntOrNull()
 
         if (dividedBy != null) {
             result = amountTotal/dividedBy
