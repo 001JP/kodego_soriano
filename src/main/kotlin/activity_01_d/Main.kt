@@ -16,13 +16,13 @@ Note: Error checking must be done.
 
 fun main() {
 
-    var amountTotal: Double = 0.0
-    var result: Double = 0.0
+    var amountTotal: Int = 0
+    var result: Int = 0
     var finished = true
 
     for (i in 1..5) {
         println("ENTER THE AMOUNT $i: ")
-        var amount = readLine()?.toDoubleOrNull()
+        var amount = readLine()?.toIntOrNull()
 
         if (amount != null) {
             amountTotal += amount
@@ -36,7 +36,7 @@ fun main() {
     if (finished) {
 
         println("Divide the value by how many? ")
-        var dividedBy = readLine()?.toDoubleOrNull()
+        var dividedBy = readLine()?.toIntOrNull()
 
         if (dividedBy != null) {
             result = amountTotal/dividedBy
