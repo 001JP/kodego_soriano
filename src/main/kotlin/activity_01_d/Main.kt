@@ -16,26 +16,33 @@ Note: Error checking must be done.
 
 fun main() {
 
-    var monetaryAmount: Int
-    var dividedBy: Int = 0
+    var amountTotal: Double = 0.0
     var result: Double = 0.0
-    var amountTotal: Int = 0
+    var finished = true
 
     for (i in 1..5) {
+        println("ENTER THE AMOUNT $i: ")
+        var amount = readLine()?.toDoubleOrNull()
 
-        println("Enter the amount: ")
-        monetaryAmount = readLine()!!.toInt()
-
-        if (monetaryAmount is Int) {
-           amountTotal += monetaryAmount
+        if (amount != null) {
+            amountTotal += amount
         } else {
-            println("Invalid data type")
+            println("USE NUMBERS ONLY")
+            finished = false
+            break
         }
     }
 
-    println("Divide the value by how many? ")
-    dividedBy = readLine()!!.toInt()
-    result = amountTotal/dividedBy.toDouble()
-    println(result)
+    if (finished) {
 
+        println("Divide the value by how many? ")
+        var dividedBy = readLine()?.toDoubleOrNull()
+
+        if (dividedBy != null) {
+            result = amountTotal/dividedBy
+            println("Result is $result")
+        } else {
+            println("USE NUMBERS ONLY")
+        }
+    }
 }
