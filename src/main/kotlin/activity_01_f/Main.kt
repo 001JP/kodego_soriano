@@ -12,18 +12,46 @@ Your application will print all unique characters in both Strings.
 
 fun main() {
 
+    var uniqueChar = mutableSetOf<Char>()
+    var indexFirstString = 0
+    var indexSecondString = 0
+    var unique = false
+
     logger.info { "TYPE THE FIRST STRING" }
-    val firstString: String = readLine().toString()
+    var firstString: String = readLine().toString()
     logger.info { "TYPE THE SECOND STRING" }
-    val secondString: String = readLine().toString()
+    var secondString: String = readLine().toString()
 
-    logger.info { "THE FIRST STRING IS:" }
-    for (i in firstString) {
-        logger.info { i }
+    if (firstString.length < secondString.length) {
+        val holder = firstString
+        firstString = secondString
+        secondString = holder
     }
 
-    logger.info { "THE FIRST SECOND IS:" }
-    for (i in secondString) {
-        logger.info { i }
-    }
+    do {
+        var char1 = firstString[indexFirstString].lowercaseChar()
+        indexFirstString++
+
+        do {
+            var char2 = secondString[indexSecondString].lowercaseChar()
+
+            if (char1 == char2) {
+                unique = false
+                break
+            } else {
+                unique = true
+            }
+            indexSecondString++
+
+        } while (indexSecondString < secondString.length)
+
+        indexSecondString = 0
+
+        if (unique) {
+            uniqueChar.add(char1)
+        }
+
+    } while (indexFirstString < firstString.length)
+    logger.info { "UNIQUE CHARACTERS: $uniqueChar" }
+
 }
