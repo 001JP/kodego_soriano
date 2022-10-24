@@ -16,20 +16,20 @@ Loops*/
 
 fun main() {
 
-    var charChecker: Int = 0
+    var index: Int = 0
     var result = false
 
     logger.info { "ENTER A WORD TO CHECK IF IT'S A PALINDROME" }
     val palindromeOrNot: String = readLine().toString()
 
-    for (char in palindromeOrNot.length-1  downTo 0) {
+    for (reversedIndex in palindromeOrNot.length-1 downTo 0) {
 
-        result = palindromeOrNot[char] == palindromeOrNot[charChecker]
+        result = palindromeOrNot[reversedIndex] == palindromeOrNot[index]
 
         if (!result) {
             break
         }
-        charChecker++
+        index++
 
     }
 
