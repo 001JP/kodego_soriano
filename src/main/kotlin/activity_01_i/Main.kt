@@ -18,33 +18,47 @@ private val logger = KotlinLogging.logger{}
 fun main() {
 
     val borrowersList = mutableListOf<String>()
+    var end = false
 
-    logger.info { "ENTER BORROWERS NAME: " }
-    val name = readLine().toString()
+    do {
 
-    logger.info { "ENTER THE BOOKS BORROWED: " }
-    val books = readLine().toString()
+        logger.info { "PRESS A to add borrower, S to search borrower, and any key to end" }
+        val action = readLine().toString()
 
-    logger.info { "ENTER DATE BORROWED: " }
-    val date = readLine().toString()
+        if (action == "A") {
 
-    logger.info { "ENTER RETURN DATE: " }
-    val returnDate = readLine().toString()
+            logger.info { "ENTER BORROWERS NAME: " }
+            val name = readLine().toString()
 
-    var infos = ("Name: $name, Books: $books, Date: $date, Return Date: $returnDate")
+            logger.info { "ENTER THE BOOKS BORROWED: " }
+            val books = readLine().toString()
 
-    logger.info { "CONFIRM INFORMATION: $infos" }
-    logger.info { "ENTER Y/N" }
+            logger.info { "ENTER DATE BORROWED: " }
+            val date = readLine().toString()
 
-    val confirmation = readLine().toString()
+            logger.info { "ENTER RETURN DATE: " }
+            val returnDate = readLine().toString()
 
-    if (confirmation == "Y") {
-        borrowersList.add(infos)
-        logger.info { "INFO SUCCESSFULLY ADDED TO BORROWERS LIST" }
-    } else {
-        logger.info { "CANCELLED" }
-    }
+            val infos = ("Name: $name, Books: $books, Date: $date, Return Date: $returnDate")
 
-    logger.info { borrowersList }
+            borrowersList.add(infos)
+            logger.info { "$name SUCCESSFULLY ADDED TO BORROWERS LIST WITH ID: ${borrowersList.size-1}" }
+
+        } else if (action == "S") {
+
+            logger.info { "ENTER BORROWER ID: " }
+            val search = readLine()!!.toInt()
+
+            if (search < borrowersList.size && search >= 0 ) {
+                logger.info { borrowersList[search] }
+            } else {
+                logger.info { "INVALID ID" }
+            }
+
+        } else {
+            end = true
+        }
+
+    } while (!end)
 
 }
