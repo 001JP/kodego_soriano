@@ -38,4 +38,5 @@ fun main() {
     } else {
         logger.info {"$palindromeOrNot IS NOT A PALINDROME"}
     }
+
 }
