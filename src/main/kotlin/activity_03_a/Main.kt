@@ -74,10 +74,10 @@ fun searchStudentWildSearch(str : String): ArrayList<String> {
 
     val wildSearch = ArrayList<String>()
 
-    for (i in studentNames) {
+    for (name in studentNames) {
 
-        if (i.contains(str, true)) {
-            wildSearch.add(i)
+        if (name.contains(str, true)) {
+            wildSearch.add(name)
         }
 
     }
@@ -90,10 +90,10 @@ fun searchStudentName(name: String): ArrayList<String> {
 
     val searchStudent = ArrayList<String>()
 
-    for (i in studentNames) {
+    for (name in studentNames) {
 
-        if (i.contentEquals(name, true)) {
-            searchStudent.add(i)
+        if (name.contentEquals(name, true)) {
+            searchStudent.add(name)
         }
     }
 
