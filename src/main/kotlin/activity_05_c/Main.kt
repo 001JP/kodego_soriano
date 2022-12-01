@@ -15,14 +15,14 @@ a - add to cart > add an item in the cart
 b - remove from cart > remove item in the cart
 c - check out cart > compute the total cost of the cart.*/
 
-open class Products(val item: String?, val price: Double?)
+open class Products(val item: String, val price: Double)
 
 val cart = hashMapOf<String, Double>()
 
-class Main(item: String, price: Double):Products(item, price) {
+class Main(item: String,price: Double):Products(item, price) {
 
     fun addToCart() {
-        cart[item!!] = price!!
+        cart[item] = price
     }
 
     companion object {
