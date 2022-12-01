@@ -19,24 +19,25 @@ open class Products(val item: String?, val price: Double?)
 
 val cart = hashMapOf<String, Double>()
 
-class Main(item: String?, price: Double?):Products(item, price) {
+class Main(item: String, price: Double):Products(item, price) {
 
     fun addToCart() {
         cart[item!!] = price!!
     }
 
-    fun removeFromCart(item: String){
-        cart.remove(item)
-    }
-
-    fun checkOutCart(): Double{
-        var total = 0.0
-
-        for (amount in cart.values) {
-            total += amount
+    companion object {
+        fun removeFromCart(item: String){
+            cart.remove(item)
         }
+        fun checkOutCart(): Double{
+            var total = 0.0
 
-        return total
+            for (amount in cart.values) {
+                total += amount
+            }
+
+            return total
+        }
     }
 }
 
@@ -44,9 +45,9 @@ fun main() {
 
     var item1 = Main("Apple", 10.5).addToCart()
     var item2 = Main("Orange", 5.0).addToCart()
-    var remove = Main(null, null).removeFromCart("Orange")
+    var remove = Main.removeFromCart("Orange")
     var item3 = Main("Banana", 5.0).addToCart()
-    var total = Main(null, null).checkOutCart()
+    var total = Main.checkOutCart()
 
     println("CART: ${cart.toString()}")
     println("TOTAL: $total")
