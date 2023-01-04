@@ -55,7 +55,6 @@ abstract class SnakeAndLaddersBoard(){
 
         return result
     }
-
 }
 
 class Play(player: String, playerCurrentPosition: Int): SnakeAndLaddersBoard() {

@@ -12,26 +12,73 @@ if the array size is greater than 10 throw invalid input
 if the array contains 0 throw incomplete grades*/
 
 fun main(){
+    val checkGrades = CheckGrades()
 
-    checkStudentGrades(arrayOf())
-    checkStudentGrades(arrayOf(10, 20, 30, 40, 50))
-
-}
-
-fun checkStudentGrades(grades: Array<Int>){
-
-    if (grades.isEmpty()) {
-        throw CheckGrades.IncompleteGrades()
-    }
-
-    if (grades.size < 10) {
-        throw CheckGrades.InvalidLength()
-    }
+    //checkGrades.gradeChecker((arrayOf()))
+    checkGrades.gradeChecker(arrayOf(101, 87, 84, 85, 85, 86, 87, 90, 90, 91))
 
 }
 
-sealed class CheckGrades(message: String): Exception(message){
+class CheckGrades(){
+    fun gradeChecker(gradesInput: Array<Int>){
 
-    class InvalidLength(message: String = "Grade size should be greater than 10"): CheckGrades(message)
-    class IncompleteGrades(message: String = "Grade should not be empty"): CheckGrades(message)
+        gradesInput.forEach {grade ->
+            if(grade !in 0..100){
+                throw GradeErrors.InvalidInput("$grade Grade should be 0 to 100")
+            }
+        }
+
+        if (gradesInput.isEmpty()) {
+            throw GradeErrors.InvalidInput()
+        }
+        if (gradesInput.size < 10) {
+            throw GradeErrors.InvalidLength()
+        }
+
+        val average = getAverage(gradesInput)
+        println("Average $average")
+        println("Grade ${getFinalGrade(average)}")
+
+    }
+
+    private fun getAverage(grades: Array<Int>): Int{
+        return grades.average().toInt()
+    }
+
+    private fun getFinalGrade(average: Int): Float{
+
+        var grade : Float = 0F
+
+        when{
+            average >= 94 -> {
+                grade = 4.0F
+            }
+            average >= 89 -> {
+                grade = 3.5F
+            }
+            average >= 83 -> {
+                grade = 3.0F
+            }
+            average >= 78 -> {
+                grade = 2.5F
+            }
+            average >= 72 -> {
+                grade = 2.0F
+            }
+            average >= 66 -> {
+                grade = 1.5F
+            }
+            average >= 60 -> {
+                grade = 1.0F
+            }
+        }
+        return grade
+    }
+
+}
+
+sealed class GradeErrors(message: String): Exception(message){
+
+    class InvalidLength(message: String = "Grade size should be greater than 10"): GradeErrors(message)
+    class InvalidInput(message: String = "Grade should not be empty"): GradeErrors(message)
 }

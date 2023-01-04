@@ -20,11 +20,11 @@ fun main() {
     var result = false
 
     logger.info { "ENTER A WORD TO CHECK IF IT'S A PALINDROME" }
-    val palindromeOrNot: String = readLine().toString()
+    val palindromeOrNot = readLine().toString()
 
     for (reversedIndex in palindromeOrNot.length-1 downTo 0) {
 
-        result = palindromeOrNot[reversedIndex] == palindromeOrNot[index]
+        result = palindromeOrNot[reversedIndex].lowercaseChar() == palindromeOrNot[index].lowercaseChar()
 
         if (!result) {
             break

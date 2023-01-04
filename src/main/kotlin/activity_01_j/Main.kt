@@ -23,13 +23,13 @@ fun main() {
 
     do {
         logger.info { "ENTER ITEM NAME: " }
-        var itemName =readLine().toString()
+        val itemName =readLine().toString()
 
         logger.info { "ENTER $itemName QUANTITY: " }
-        var itemQuantity = readLine()?.toInt()
+        val itemQuantity = readLine()?.toInt()
 
         logger.info {"ENTER $itemName PRICE: "}
-        var itemPrice = readLine()?.toDouble()
+        val itemPrice = readLine()?.toDouble()
 
         total += (itemPrice!! * itemQuantity!!)
 
@@ -38,9 +38,9 @@ fun main() {
         cost.add(itemPrice)
 
         logger.info { "ADD ANOTHER ITEM? Y/N" }
-        var confirmation = readLine().toString()
+        val confirmation = readLine().toString()
 
-    } while (confirmation == "Y") // It will continue looping when while statement is true
+    } while (confirmation == "Y")
 
 
     for (i in items.indices) {

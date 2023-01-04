@@ -3,7 +3,7 @@ import activity_07_c.CartError
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-class Activity07Testing {
+class Activity07C {
 
     private val cart = Cart()
 

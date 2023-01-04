@@ -12,7 +12,7 @@ Your application will print all unique characters in both Strings.
 
 fun main() {
 
-    var uniqueChar = mutableSetOf<Char>()
+    val uniqueChar = mutableSetOf<Char>()
     var indexFirstString = 0
     var indexSecondString = 0
     var unique = false
@@ -29,11 +29,11 @@ fun main() {
     }
 
     do {
-        var char1 = firstString[indexFirstString].lowercaseChar()
+        val char1 = firstString[indexFirstString].lowercaseChar()
         indexFirstString++
 
         do {
-            var char2 = secondString[indexSecondString].lowercaseChar()
+            val char2 = secondString[indexSecondString].lowercaseChar()
 
             if (char1 == char2) {
                 unique = false
@@ -52,6 +52,7 @@ fun main() {
         }
 
     } while (indexFirstString < firstString.length)
+
     logger.info { "UNIQUE CHARACTERS: $uniqueChar" }
 
 }

@@ -18,7 +18,7 @@ if the item is for fixing - Cannot borrow due to item needs to be fixed
 
 You will need to add the remaining classes and add the remaining methods and attributes in order to implement the functionalities.*/
 
-data class User(val firstName: String, val middleName: String, val lastName: String, val itemsBorrowed:ArrayList<String>, val unpaidDues: Boolean)
+class User(val firstName: String, val middleName: String, val lastName: String, val itemsBorrowed:ArrayList<String>, var unpaidDues: Boolean)
 
 enum class CheckItem(){
     AVAILABLE,
@@ -27,43 +27,46 @@ enum class CheckItem(){
     FIXING
 }
 
-class BorrowForm(val user: User, val itemToBorrow: String, val itemStatus: CheckItem)
+class BorrowForm(val user: User, val itemToBorrow: String, var itemStatus: CheckItem)
 
 fun main() {
+    val library = Library()
 
     val user1 :BorrowForm= BorrowForm(
         User("Juan",
             "Santos",
             "Dela Cruz",
-            arrayListOf("Book1", "Book2, Book3, Book4, Book5"),
+            arrayListOf("Book1", "Book2", "Book3", "Book4", "Book5"),
             true),
         "Book6",
         CheckItem.RESERVED)
 
-    libraryChecking(user1)
+    library.check(user1)
 
 }
 
-fun libraryChecking(borrowItem: BorrowForm){
+class Library(){
 
-    if(borrowItem.user.itemsBorrowed.size <= 5){
-        throw CanNotBorrow.User.TooManyItemsBorrowed()
-    }
+    fun check(borrowItem:BorrowForm) {
+        if(borrowItem.user.itemsBorrowed.size >= 5){
+            throw CanNotBorrow.User.TooManyItemsBorrowed()
+        }
 
-    if(borrowItem.user.unpaidDues){
-        throw CanNotBorrow.User.UnpaidDues()
-    }
+        if(borrowItem.user.unpaidDues){
+            throw CanNotBorrow.User.UnpaidDues()
+        }
 
-    if(borrowItem.itemStatus == CheckItem.RESERVED) {
-        throw CanNotBorrow.Item.Reserved()
-    }
+        if(borrowItem.itemStatus == CheckItem.RESERVED) {
+            throw CanNotBorrow.Item.Reserved()
+        }
 
-    if(borrowItem.itemStatus == CheckItem.INTERNAL_USE){
-        throw CanNotBorrow.Item.InternalUse()
-    }
+        if(borrowItem.itemStatus == CheckItem.INTERNAL_USE){
+            throw CanNotBorrow.Item.InternalUse()
+        }
 
-    if(borrowItem.itemStatus == CheckItem.FIXING){
-        throw CanNotBorrow.Item.Fixing()
+        if(borrowItem.itemStatus == CheckItem.FIXING){
+            throw CanNotBorrow.Item.Fixing()
+        }
     }
 
 }
